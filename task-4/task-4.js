@@ -9,3 +9,26 @@
 //   <span id="value">0</span>
 //   <button type="button" data-action="increment">+1</button>
 // </div>
+
+const ref = {
+    buttonDecrement: document.querySelector('[data-action="decrement"]'),
+    buttonIncrement: document.querySelector('[data-action="increment"]'),
+    htmlValue: document.querySelector('#value'),
+}
+
+let value = parseInt(ref.htmlValue.textContent);
+
+const render = () => ref.htmlValue.textContent = value;
+
+const decremenet = () => {
+    value -= 1;
+    render();
+}
+
+const incremenet = () => {
+    value += 1;
+    render();
+}
+
+ref.buttonDecrement.addEventListener('click' , decremenet);
+ref.buttonIncrement.addEventListener('click' , incremenet)
